@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ROGER'S TODO LIST FOR 15 SEP 2023</title>
+</head>
+<body>
+    <h1>ROGER'S TODO LIST FOR 15 SEP 2023</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <form action="{{ url_for('delete_task', task_id=task['id']) }}" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Add a New Task</h2>
+    <form action="/add_task" method="post">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        <button type="submit">Add Task</button>
+    </form>
+</body>
+</html>

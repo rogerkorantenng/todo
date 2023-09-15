@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ROGER'S TODO LIST FOR 15 SEP 2023</title>
+    <title>ROGER'S Todo List for 15 Sep 2023</title>
 </head>
 <body>
-    <h1>ROGER'S TODO LIST FOR 15 SEP 2023</h1>
+    <h1>ROGER'S Todo List for 15 Sep 2023</h1>
     <ul>
-        {% for task in tasks %}
+        {% for task in tasks_15_sep %}
             <li>
+                {{ task['title'] }}
                 <form action="{{ url_for('delete_task', task_id=task['id']) }}" method="post" style="display:inline;">
                     <button type="submit">Delete</button>
                 </form>
